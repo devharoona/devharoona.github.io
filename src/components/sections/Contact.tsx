@@ -13,24 +13,16 @@ const SOCIALS = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sent' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
     setFeedback('');
-    try {
-      const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error);
-      setStatus('sent');
-      setFeedback('Thanks. Your message is on its way.');
-      setForm({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      setStatus('error');
-      setFeedback(error instanceof Error ? error.message : 'Unable to send your message.');
-    }
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`;
+    window.location.href = `mailto:${PERSONAL.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    setStatus('sent');
+    setFeedback('Your email app should open with the message ready to send.');
   };
 
   return (
@@ -103,9 +95,8 @@ export default function Contact() {
                   ? 'border border-rose-400/30 bg-rose-400/10 text-rose-200'
                   : 'bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] text-[#05060A] hover:opacity-90 glow-cyan'
             }`}
-            disabled={status === 'sending'}
           >
-            {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Message sent' : 'Send Message →'}
+            {status === 'sent' ? 'Email draft opened' : 'Open Email App →'}
           </button>
         </form>
       </div>

@@ -110,23 +110,24 @@ npm run build
 npm run start
 ```
 
-For a static hosting workflow, use a Next.js-compatible deployment target. The configured metadata currently uses `https://devharoona.github.io` as the canonical site base.
+The site is exported as static HTML and deployed to GitHub Pages by
+[`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml).
+The custom domain is `haroonrasool.me`; configure GitHub Pages to use GitHub
+Actions as its source and enable HTTPS after the first successful deployment.
 
 ## Contact Configuration
 
-The contact form posts to `/api/contact`. Email delivery is server-side and uses the Resend REST API. No API key is exposed to client code.
+GitHub Pages is static hosting, so the contact form opens the visitor's email
+application with a pre-filled message. No server-side API key is included in
+the site or workflow.
 
-Create environment variables for local development or deployment:
+## Custom domain DNS
 
-```env
-RESEND_API_KEY=re_your_server_key
-CONTACT_FROM_EMAIL=Portfolio <your-verified-sender@example.com>
-CONTACT_TO_EMAIL=haroonrasool2@gmail.com
-```
-
-`CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL` have safe defaults in the route, but production deployments should provide explicit values and use a sender domain verified with Resend.
-
-Without `RESEND_API_KEY`, the endpoint intentionally returns a configuration error instead of pretending that a message was sent.
+At your DNS provider, point `haroonrasool.me` to GitHub Pages using the four
+GitHub A records (`185.199.108.153`, `185.199.109.153`,
+`185.199.110.153`, and `185.199.111.153`). Add a `www` CNAME pointing to
+`devharoona.github.io` if you want that hostname too. After DNS propagates,
+enable **Enforce HTTPS** in the repository's Pages settings.
 
 ## Content Updates
 
