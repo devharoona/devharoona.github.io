@@ -1,0 +1,7 @@
+node_modules
+node_modules
+node_modules
+echo "node_modules/" >> .gitignore
+echo ".next/" >> .gitignore
+echo "portfolio/.next/" >> .gitignore
+echo "portfolio/node_modules/" >> .gitignore
