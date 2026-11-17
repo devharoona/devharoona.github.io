@@ -1,8 +1,8 @@
 export const PERSONAL = {
   name: 'Haroon Rasool',
-  role: 'Full-Stack Developer',
-  tagline: 'I build scalable, high-performance web applications with clean design and seamless user experiences.',
-  bio: "I'm Haroon Rasool, a Full-Stack Developer passionate about building modern web applications that combine thoughtful design with powerful functionality. I enjoy transforming complex problems into intuitive digital experiences, writing clean code, and developing products that are built to scale.",
+  role: 'Software Developer | AI & Full-Stack Engineering',
+  tagline: 'Building useful digital products through software engineering, artificial intelligence and modern web technologies.',
+  bio: "I'm Haroon Rasool, a software developer focused on AI and full-stack engineering. I build practical digital products that combine thoughtful design, reliable functionality and modern web technologies.",
   location: 'Hyderabad, Telangana, India',
   email: 'haroonrasool2@gmail.com',
   github: 'https://github.com/devharoona',

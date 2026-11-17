@@ -36,7 +36,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       <div className="project-card__glow" />
       <div className="relative h-48 overflow-hidden rounded-t-[inherit]">
         <Image
-          src={project.image} alt={project.title} fill
+          src={project.image} alt={`${project.title} project preview`} fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -99,7 +99,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative h-52">
-            <Image src={project.image} alt={project.title} fill className="object-cover" sizes="672px" />
+            <Image src={project.image} alt={`${project.title} project preview`} fill className="object-cover" sizes="672px" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#05060A] to-transparent" />
             <button onClick={onClose}
               className="absolute top-4 right-4 w-8 h-8 rounded-full glass flex items-center justify-center text-white hover:text-[#22D3EE] transition-colors"

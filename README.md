@@ -1,6 +1,6 @@
 # Haroon Rasool Portfolio
 
-A production-oriented personal portfolio built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and React Three Fiber. The site presents Haroon Rasool as a Full-Stack Developer through an interactive hero, verified project showcase, technical profile, services, education timeline, and contact workflow.
+A production-oriented personal portfolio built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and React Three Fiber. The site presents Haroon Rasool as a Software Developer focused on AI and full-stack engineering through an interactive hero, verified project showcase, technical profile, services, education timeline, and contact workflow.
 
 ## Features
 
@@ -114,6 +114,7 @@ The site is exported as static HTML and deployed to GitHub Pages by
 [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml).
 The custom domain is `haroonrasool.me`; configure GitHub Pages to use GitHub
 Actions as its source and enable HTTPS after the first successful deployment.
+The generated `sitemap.xml` and `robots.txt` are available at the site root.
 
 ## Contact Configuration
 
