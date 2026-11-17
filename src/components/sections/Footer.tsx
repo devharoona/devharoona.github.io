@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-white/5 py-8 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-mono text-xs text-slate-600">
-          © {new Date().getFullYear()} {PERSONAL.name}. Built with Next.js & ♥
+          © {new Date().getFullYear()} {PERSONAL.name}. Built with Passion & ♥
         </p>
         <div className="flex gap-6">
           {[
